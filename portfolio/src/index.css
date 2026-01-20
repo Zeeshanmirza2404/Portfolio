@@ -1,0 +1,481 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&display=swap");
+
+/* ============================================
+   DESIGN SYSTEM - CUSTOM PROPERTIES
+   ============================================ */
+
+:root {
+  /* Typography */
+  --bs-font-sans-serif: "Inter", system-ui, -apple-system, sans-serif;
+  --bs-font-monospace: "JetBrains Mono", ui-monospace, monospace;
+
+  /* Spacing Scale */
+  --spacing-xs: 4px;
+  --spacing-sm: 8px;
+  --spacing-md: 16px;
+  --spacing-lg: 24px;
+  --spacing-xl: 32px;
+  --spacing-2xl: 48px;
+  --spacing-3xl: 64px;
+  --spacing-4xl: 96px;
+
+  /* Colors - Primary */
+  --bs-primary: #7c3aed;
+  --bs-primary-rgb: 124, 58, 237; /* Colors - Primary (Vibrant Purple) */
+  --color-accent: #7c3aed;
+  --color-accent-light: #a855f7;
+  --color-accent-dark: #6d28d9;
+  --color-accent-darker: #5b21b6;
+  
+  /* Bootstrap primary override */
+  --bs-primary: #7c3aed;
+  --bs-primary-rgb: 124, 58, 237;
+
+  /* Colors - Background */
+  --color-bg-primary: #09090d;
+  --color-bg-secondary: #0f0f14;
+  --color-bg-tertiary: #1a1a24;
+  --color-bg-card: rgba(30, 30, 40, 0.7);
+
+  /* Colors - Text */
+  --color-text-primary: #ffffff;
+  --color-text-secondary: #e0e0e0;
+  --color-text-muted: rgba(255, 255, 255, 0.6);
+  --color-text-disabled: rgba(255, 255, 255, 0.35);
+
+  /* Colors - Border */
+  --color-border-primary: rgba(255, 255, 255, 0.1);
+  --color-border-secondary: rgba(255, 255, 255, 0.05);
+  --color-border-accent: rgba(124, 58, 237, 0.3);
+
+  /* Shadows */
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.2);
+  --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.25);
+  --shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.3);
+  --shadow-xl: 0 20px 40px rgba(0, 0, 0, 0.4);
+  --shadow-glow: 0 0 60px rgba(124, 58, 237, 0.5);
+  --shadow-glow-sm: 0 0 30px rgba(124, 58, 237, 0.3);
+  --shadow-glow-lg: 0 0 80px rgba(124, 58, 237, 0.6);
+
+  /* Transitions */
+  --transition-fast: 150ms ease-in-out;
+  --transition-base: 250ms ease-in-out;
+  --transition-slow: 400ms ease-in-out;
+
+  /* Border Radius */
+  --radius-sm: 6px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-xl: 24px;
+}
+
+[data-bs-theme="dark"] {
+  --bs-body-bg: var(--color-bg-secondary);
+  --bs-body-color: var(--color-text-secondary);
+  --bs-border-color: var(--color-border-primary);
+  --bs-secondary-color: var(--color-text-muted);
+  --bs-card-bg: var(--color-bg-card);
+}
+
+/* ============================================
+   BASE STYLES
+   ============================================ */
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--bs-font-sans-serif);
+  background-color: var(--color-bg-secondary);
+  color: var(--color-text-secondary);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  line-height: 1.6;
+  font-size: 16px;
+}
+
+/* ============================================
+   TYPOGRAPHY ENHANCEMENTS
+   ============================================ */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+}
+
+.display-4 {
+  font-size: 3.25rem !important;
+  font-weight: 900;
+  letter-spacing: -0.04em;
+  line-height: 1.1;
+}
+
+.display-5 {
+  font-size: 2.25rem !important;
+  font-weight: 900;
+  letter-spacing: -0.03em;
+}
+
+.fs-5 {
+  font-size: 1.25rem !important;
+}
+
+p {
+  line-height: 1.7;
+}
+
+/* ============================================
+   TEXT UTILITIES
+   ============================================ */
+
+.text-primary {
+  color: var(--color-accent) !important;
+}
+
+.text-secondary {
+  color: var(--color-text-secondary) !important;
+}
+
+/* ============================================
+   BUTTON STYLES
+   ============================================ */
+
+.btn {
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  transition: all var(--transition-base);
+  border-radius: var(--radius-sm);
+}
+
+.btn-primary {
+  background: linear-gradient(
+    135deg,
+    var(--color-accent),
+    var(--color-accent-light)
+  );
+  border: none;
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-primary::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    135deg,
+    var(--color-accent-dark),
+    var(--color-accent-darker)
+  );
+  opacity: 0;
+  transition: opacity var(--transition-base);
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px) scale(1.02);
+  box-shadow:
+    0 0 40px rgba(124, 58, 237, 0.6),
+    0 12px 32px rgba(124, 58, 237, 0.4),
+    0 4px 16px rgba(0, 0, 0, 0.3);
+}
+
+.btn-primary:hover::before {
+  opacity: 1;
+}
+
+.btn-primary > * {
+  position: relative;
+  z-index: 1;
+}
+
+.btn-primary:active {
+  transform: translateY(-1px) scale(1.01);
+}
+
+.btn-outline-light {
+  border-color: var(--color-border-primary);
+  color: var(--color-text-primary);
+  background: transparent;
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-outline-light::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(255, 255, 255, 0.1);
+  opacity: 0;
+  transition: opacity var(--transition-base);
+}
+
+.btn-outline-light:hover {
+  border-color: rgba(255, 255, 255, 0.4);
+  color: var(--color-text-primary);
+  transform: translateY(-2px);
+  box-shadow: 
+    0 0 20px rgba(255, 255, 255, 0.15),
+    0 8px 24px rgba(255, 255, 255, 0.1);
+}
+
+.btn-outline-light:hover::before {
+  opacity: 1;
+}
+
+.btn-outline-light > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* ============================================
+   UTILITY CLASSES
+   ============================================ */
+
+.text-primary {
+  color: var(--color-accent-light) !important;
+}
+
+.bg-primary {
+  background-color: var(--color-accent) !important;
+}
+
+.border-primary {
+  border-color: var(--color-accent) !important;
+}
+
+.backdrop-blur {
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+}
+
+.transition-all {
+  transition: all var(--transition-base);
+}
+
+/* Glassmorphism */
+.glass {
+  background: rgba(30, 30, 40, 0.6);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid var(--color-border-primary);
+}
+
+.glass-strong {
+  background: rgba(30, 30, 40, 0.8);
+  backdrop-filter: blur(30px);
+  -webkit-backdrop-filter: blur(30px);
+  border: 1px solid var(--color-border-primary);
+}
+
+/* Glow Effects */
+.glow-on-hover {
+  transition:
+    box-shadow var(--transition-base),
+    transform var(--transition-base);
+}
+
+.glow-on-hover:hover {
+  box-shadow: var(--shadow-glow);
+}
+
+/* ============================================
+   NAVIGATION STYLES
+   ============================================ */
+
+.navbar-dark .nav-link {
+  transition: color var(--transition-base);
+  position: relative;
+  font-weight: 500;
+}
+
+.navbar-dark .nav-link::after {
+  content: "";
+  position: absolute;
+  bottom: -4px;
+  left: 50%;
+  transform: translateX(-50%) scaleX(0);
+  width: 80%;
+  height: 2px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    var(--color-accent-light),
+    transparent
+  );
+  transition: transform var(--transition-base);
+}
+
+.navbar-dark .nav-link:hover {
+  color: var(--color-accent-light) !important;
+}
+
+.navbar-dark .nav-link:hover::after {
+  transform: translateX(-50%) scaleX(1);
+}
+
+/* ============================================
+   CARD STYLES
+   ============================================ */
+
+.card {
+  transition:
+    transform var(--transition-base),
+    box-shadow var(--transition-base),
+    border-color var(--transition-base);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--color-border-primary);
+}
+
+.card-hover-lift {
+  transition:
+    transform var(--transition-base),
+    box-shadow var(--transition-base);
+}
+
+.card-hover-lift:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(124, 58, 237, 0.2);
+}
+
+/* ============================================
+   ANIMATION UTILITIES
+   ============================================ */
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+@keyframes glow {
+  0%,
+  100% {
+    box-shadow: 0 0 20px rgba(124, 58, 237, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 40px rgba(124, 58, 237, 0.6);
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.6s ease-out;
+}
+
+.animate-slide-up {
+  animation: slideUp 0.6s ease-out;
+}
+
+.animate-pulse {
+  animation: pulse 2s ease-in-out infinite;
+}
+
+/* ============================================
+   SCROLLBAR STYLES
+   ============================================ */
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-bg-primary);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(124, 58, 237, 0.3);
+  border-radius: 5px;
+  border: 2px solid var(--color-bg-primary);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(124, 58, 237, 0.5);
+}
+
+/* ============================================
+   RESPONSIVE UTILITIES
+   ============================================ */
+
+@media (max-width: 768px) {
+  :root {
+    --spacing-2xl: 32px;
+    --spacing-3xl: 48px;
+    --spacing-4xl: 64px;
+  }
+
+  h1 {
+    font-size: 2rem !important;
+  }
+
+  h2 {
+    font-size: 1.75rem !important;
+  }
+  
+  .display-4 {
+    font-size: 2.25rem !important;
+  }
+  
+  .display-5 {
+    font-size: 1.875rem !important;
+  }
+  
+  .fs-5 {
+    font-size: 1.125rem !important;
+  }
+}
+
+/* ============================================
+   ACCESSIBILITY
+   ============================================ */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  html {
+    scroll-behavior: auto;
+  }
+}
