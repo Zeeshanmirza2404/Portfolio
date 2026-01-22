@@ -14,9 +14,12 @@ const Index = () => {
   }, []);
 
   return (
-    <div className="min-vh-100 bg-dark text-light overflow-hidden">
+    <div
+      className="min-vh-100 bg-dark text-light"
+      style={{ width: "100%", maxWidth: "100%", overflowX: "hidden" }}
+    >
       <Navigation />
-      <main>
+      <main style={{ width: "100%" }}>
         <HeroSection />
         <AboutSection />
         <ProjectSection />

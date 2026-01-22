@@ -33,7 +33,9 @@ const TerminalUI = () => {
         `,
         border: "1px solid rgba(124, 58, 237, 0.3)",
         borderRadius: "12px",
-        transition: "all 0.3s ease"
+        transition: "all 0.3s ease",
+        maxWidth: "100%",
+        overflowX: "auto",
       }}
       whileHover={{
         y: -4,
@@ -42,24 +44,26 @@ const TerminalUI = () => {
           0 24px 70px rgba(0, 0, 0, 0.7),
           0 0 0 1px rgba(124, 58, 237, 0.4),
           inset 0 0 0 1px rgba(255, 255, 255, 0.08)
-        `
+        `,
       }}
     >
       {/* Terminal header */}
       <div
-        className="d-flex align-items-center gap-2 px-3 py-2 border-bottom"
-        style={{ 
+        className="d-flex align-items-center gap-2 px-3 py-2 border-bottom flex-wrap"
+        style={{
           background: "rgba(255,255,255,0.03)",
-          borderBottomColor: "rgba(124, 58, 237, 0.2) !important"
+          borderBottomColor: "rgba(124, 58, 237, 0.2) !important",
+          minHeight: "44px",
         }}
       >
-        <div className="d-flex gap-2">
+        <div className="d-flex gap-2 flex-shrink-0">
           <span
             className="rounded-circle"
             style={{
               width: "12px",
               height: "12px",
               background: "rgba(239, 68, 68, 0.9)",
+              flexShrink: 0,
             }}
           />
           <span
@@ -68,6 +72,7 @@ const TerminalUI = () => {
               width: "12px",
               height: "12px",
               background: "rgba(234, 179, 8, 0.9)",
+              flexShrink: 0,
             }}
           />
           <span
@@ -76,12 +81,17 @@ const TerminalUI = () => {
               width: "12px",
               height: "12px",
               background: "rgba(34, 197, 94, 0.9)",
+              flexShrink: 0,
             }}
           />
         </div>
         <span
           className="small text-secondary ms-2"
-          style={{ fontFamily: "var(--bs-font-monospace)", opacity: 0.7 }}
+          style={{
+            fontFamily: "var(--bs-font-monospace)",
+            opacity: 0.7,
+            fontSize: "clamp(0.75rem, 1.5vw, 0.875rem)",
+          }}
         >
           terminal — zsh
         </span>
@@ -89,12 +99,13 @@ const TerminalUI = () => {
 
       {/* Terminal body */}
       <div
-        className="p-4"
+        className="p-3 p-md-4"
         style={{
           fontFamily: "var(--bs-font-monospace)",
-          fontSize: "14px",
+          fontSize: "clamp(12px, 1.5vw, 14px)",
           minHeight: "200px",
           background: "rgba(0,0,0,0.4)",
+          overflowX: "auto",
         }}
       >
         {commands.map((cmd, index) => (
@@ -107,15 +118,29 @@ const TerminalUI = () => {
                 : { opacity: 0, x: -10 }
             }
             transition={{ duration: 0.4, ease: "easeOut" }}
-            className="d-flex align-items-start fs-6 gap-2 mb-2"
+            className="d-flex align-items-start gap-2 mb-2 word-break"
+            style={{ minHeight: "24px" }}
           >
-            <span style={{ color: "#a855f7", textShadow: "0 0 10px rgba(124, 58, 237, 0.5)" }}>❯</span>
+            <span
+              style={{
+                color: "#a855f7",
+                textShadow: "0 0 10px rgba(124, 58, 237, 0.5)",
+                flexShrink: 0,
+              }}
+            >
+              ❯
+            </span>
             <span
               className={
                 index === commands.length - 1 ? "text-success" : "text-light"
               }
               style={{
-                textShadow: index === commands.length - 1 ? "0 0 10px rgba(34, 197, 94, 0.4)" : "none"
+                textShadow:
+                  index === commands.length - 1
+                    ? "0 0 10px rgba(34, 197, 94, 0.4)"
+                    : "none",
+                overflow: "auto",
+                wordBreak: "break-word",
               }}
             >
               {cmd.text}
@@ -129,9 +154,18 @@ const TerminalUI = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 4.5 }}
-            className="d-flex align-items-center fs-6 gap-2"
+            className="d-flex align-items-center gap-2"
+            style={{ minHeight: "24px" }}
           >
-            <span style={{ color: "#a855f7", textShadow: "0 0 10px rgba(124, 58, 237, 0.5)" }}>❯</span>
+            <span
+              style={{
+                color: "#a855f7",
+                textShadow: "0 0 10px rgba(124, 58, 237, 0.5)",
+                flexShrink: 0,
+              }}
+            >
+              ❯
+            </span>
             <span
               style={{
                 color: "#a855f7",
@@ -139,6 +173,7 @@ const TerminalUI = () => {
                 width: "8px",
                 height: "20px",
                 animation: "blink 1s step-end infinite",
+                flexShrink: 0,
               }}
             />
           </motion.div>

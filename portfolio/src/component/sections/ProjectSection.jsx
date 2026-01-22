@@ -58,25 +58,31 @@ const ProjectSection = () => {
     <section
       id="projects"
       className="py-5 position-relative"
-      style={{ paddingTop: "8rem", paddingBottom: "8rem" }}
+      style={{
+        paddingTop: "clamp(4rem, 8vw, 8rem)",
+        paddingBottom: "clamp(4rem, 8vw, 8rem)",
+      }}
     >
       {/* Background accent */}
       <div
-        className="position-absolute top-50 start-50 translate-middle"
+        className="position-absolute top-50 start-50 translate-middle d-none d-md-block"
         style={{ pointerEvents: "none" }}
       >
         <div
           className="rounded-circle"
           style={{
-            width: "1000px",
-            height: "1000px",
+            width: "clamp(600px, 80vw, 1000px)",
+            height: "clamp(600px, 80vw, 1000px)",
             background: "rgba(124, 58, 237, 0.05)",
             filter: "blur(100px)",
           }}
         />
       </div>
 
-      <div className="container position-relative mt-4" style={{ zIndex: 10 }}>
+      <div
+        className="container-fluid px-3 px-md-4 position-relative"
+        style={{ zIndex: 10 }}
+      >
         <motion.div
           ref={ref}
           initial={{ opacity: 0, y: 40 }}
@@ -84,14 +90,17 @@ const ProjectSection = () => {
           transition={{ duration: 0.6 }}
           className="text-center mb-5"
         >
-          <h2 className="display-2 fw-bold mb-3" style={{ fontSize: "4rem" }}>
+          <h2
+            className="fw-bold mb-3"
+            style={{ fontSize: "clamp(2rem, 5vw, 4rem)" }}
+          >
             Featured Projects
           </h2>
           <p
             className="text-secondary mx-auto"
             style={{
               maxWidth: "700px",
-              fontSize: "1.25rem",
+              fontSize: "clamp(1rem, 2.5vw, 1.25rem)",
               color: "rgba(255, 255, 255, 0.65)",
             }}
           >
@@ -126,24 +135,31 @@ const ProjectSection = () => {
                 e.currentTarget.style.borderColor = "rgba(255, 255, 255, 0.1)";
               }}
             >
-              <div className="card-body p-4 p-lg-5">
+              <div className="card-body p-3 p-md-4 p-lg-5">
                 <div className="row g-4">
                   {/* Left - Project Info */}
-                  <div className="col-lg-7">
+                  <div className="col-12 col-lg-7">
                     <div className="d-flex align-items-start gap-3 mb-4">
                       <div
                         className="d-flex align-items-center justify-content-center rounded flex-shrink-0"
                         style={{
-                          width: "64px",
-                          height: "64px",
+                          width: "clamp(48px, 10vw, 64px)",
+                          height: "clamp(48px, 10vw, 64px)",
                           background: "rgba(124, 58, 237, 0.1)",
+                          minWidth: "48px",
+                          minHeight: "48px",
                         }}
                       >
                         <project.icon size={32} style={{ color: "#7c3aed" }} />
                       </div>
-                      <div>
-                        <h3 className="h3 fw-bold mb-1">{project.title}</h3>
-                        <p className="text-secondary fs-5 mb-0">
+                      <div className="min-w-0">
+                        <h3 className="h4 h-md-3 fw-bold mb-1">
+                          {project.title}
+                        </h3>
+                        <p
+                          className="text-secondary mb-0"
+                          style={{ fontSize: "clamp(0.95rem, 2vw, 1.125rem)" }}
+                        >
                           {project.subtitle}
                         </p>
                       </div>
@@ -152,11 +168,17 @@ const ProjectSection = () => {
                     <div className="mb-4">
                       <h4
                         className="text-uppercase small fw-semibold text-secondary mb-2"
-                        style={{ letterSpacing: "0.1em" }}
+                        style={{
+                          letterSpacing: "0.1em",
+                          fontSize: "clamp(0.75rem, 1.5vw, 0.875rem)",
+                        }}
                       >
                         The Problem
                       </h4>
-                      <p className="text-light fs-6 opacity-75">
+                      <p
+                        className="text-light opacity-75"
+                        style={{ fontSize: "clamp(0.9rem, 2vw, 1rem)" }}
+                      >
                         {project.problem}
                       </p>
                     </div>
@@ -164,11 +186,17 @@ const ProjectSection = () => {
                     <div className="mb-4">
                       <h4
                         className="text-uppercase small fw-semibold text-secondary mb-2"
-                        style={{ letterSpacing: "0.1em" }}
+                        style={{
+                          letterSpacing: "0.1em",
+                          fontSize: "clamp(0.75rem, 1.5vw, 0.875rem)",
+                        }}
                       >
                         The Solution
                       </h4>
-                      <p className="text-light fs-6 opacity-75">
+                      <p
+                        className="text-light opacity-75"
+                        style={{ fontSize: "clamp(0.9rem, 2vw, 1rem)" }}
+                      >
                         {project.solution}
                       </p>
                     </div>
@@ -177,22 +205,26 @@ const ProjectSection = () => {
                       {project.stack.map((tech) => (
                         <span
                           key={tech}
-                          className="badge bg-secondary bg-opacity-50 text-light fw-normal px-3 py-2"
+                          className="badge text-light fw-normal px-3 py-2"
                           style={{
+                            background: "rgba(255, 255, 255, 0.05)",
+                            border: "1px solid rgba(255, 255, 255, 0.1)",
                             borderRadius: "6px",
-                            fontSize: "0.875rem",
-                            transition: "all 0.2s ease",
+                            fontSize: "clamp(0.75rem, 1.5vw, 0.875rem)",
+                            transition: "all 0.3s ease",
+                            cursor: "default",
                           }}
                           onMouseEnter={(e) => {
-                            e.currentTarget.style.background =
-                              "rgba(124, 58, 237, 0.2)";
-                            e.currentTarget.style.transform =
-                              "translateY(-2px)";
+                            e.currentTarget.style.background = "rgba(124, 58, 237, 0.2)";
+                            e.currentTarget.style.borderColor = "rgba(124, 58, 237, 0.5)";
+                            e.currentTarget.style.transform = "translateY(-2px)";
+                            e.currentTarget.style.boxShadow = "0 4px 12px rgba(124, 58, 237, 0.15)";
                           }}
                           onMouseLeave={(e) => {
-                            e.currentTarget.style.background =
-                              "rgba(255, 255, 255, 0.1)";
+                            e.currentTarget.style.background = "rgba(255, 255, 255, 0.05)";
+                            e.currentTarget.style.borderColor = "rgba(255, 255, 255, 0.1)";
                             e.currentTarget.style.transform = "translateY(0)";
+                            e.currentTarget.style.boxShadow = "none";
                           }}
                         >
                           {tech}
@@ -200,51 +232,64 @@ const ProjectSection = () => {
                       ))}
                     </div>
 
-                    <div className="d-flex gap-3">
+                    <div className="d-flex gap-2 flex-column flex-sm-row">
                       <a
-                        href="#"
-                        className="btn d-inline-flex align-items-center gap-2 px-4 py-2"
+                        href={project.liveDemo}
+                        className="btn d-inline-flex align-items-center justify-content-center gap-2 flex-grow-1"
                         style={{
-                          transition: "all 0.25s ease",
-                          fontSize: "1rem",
-                          backgroundColor: "#7c3aed",
+                          transition: "all 0.3s ease",
+                          fontSize: "clamp(0.9rem, 2vw, 1rem)",
+                          background: "linear-gradient(135deg, #7c3aed 0%, #a855f7 100%)",
+                          minHeight: "44px",
+                          border: "none",
                         }}
                         onMouseEnter={(e) => {
-                          e.currentTarget.style.transform = "scale(1.1)";
+                          e.currentTarget.style.transform = "translateY(-2px)";
+                          e.currentTarget.style.boxShadow = "0 10px 20px rgba(124, 58, 237, 0.4)";
                         }}
                         onMouseLeave={(e) => {
-                          e.currentTarget.style.transform = "scale(1)";
+                          e.currentTarget.style.transform = "translateY(0)";
+                          e.currentTarget.style.boxShadow = "none";
                         }}
                       >
                         <ExternalLink size={18} />
-                        Live Demo
+                        <span>Live Demo</span>
                       </a>
                       <a
                         href={project.sourceCode}
-                        className="btn btn-outline-light d-inline-flex align-items-center gap-2 px-4 py-2"
+                        className="btn btn-outline-light d-inline-flex align-items-center justify-content-center gap-2 flex-grow-1"
                         style={{
-                          transition: "all 0.25s ease",
-                          fontSize: "1rem",
+                          transition: "all 0.3s ease",
+                          fontSize: "clamp(0.9rem, 2vw, 1rem)",
+                          minHeight: "44px",
+                          border: "1px solid rgba(255, 255, 255, 0.2)",
                         }}
                         onMouseEnter={(e) => {
-                          e.currentTarget.style.transform = "scale(1.1)";
+                          e.currentTarget.style.background = "rgba(255, 255, 255, 0.1)";
+                          e.currentTarget.style.transform = "translateY(-2px)";
+                          e.currentTarget.style.borderColor = "#fff";
                         }}
                         onMouseLeave={(e) => {
-                          e.currentTarget.style.transform = "scale(1)";
+                          e.currentTarget.style.background = "transparent";
+                          e.currentTarget.style.transform = "translateY(0)";
+                          e.currentTarget.style.borderColor = "rgba(255, 255, 255, 0.2)";
                         }}
                       >
                         <Github size={18} />
-                        Source Code
+                        <span>Source Code</span>
                       </a>
                     </div>
                   </div>
 
                   {/* Right - Features */}
-                  <div className="col-lg-5">
-                    <div className="bg-secondary bg-opacity-10 rounded p-4 h-100">
+                  <div className="col-12 col-lg-5">
+                    <div className="bg-secondary bg-opacity-10 rounded p-4 h-auto h-lg-100">
                       <h4
                         className="text-uppercase small fw-semibold text-secondary mb-4"
-                        style={{ letterSpacing: "0.1em" }}
+                        style={{
+                          letterSpacing: "0.1em",
+                          fontSize: "clamp(0.75rem, 1.5vw, 0.875rem)",
+                        }}
                       >
                         Key Features
                       </h4>
@@ -252,7 +297,7 @@ const ProjectSection = () => {
                         {project.features.map((feature, i) => (
                           <li
                             key={i}
-                            className="d-flex align-items-center gap-3 mb-3"
+                            className="d-flex align-items-start gap-3 mb-3"
                           >
                             <span
                               className="rounded-circle flex-shrink-0"
@@ -260,9 +305,13 @@ const ProjectSection = () => {
                                 width: "6px",
                                 height: "6px",
                                 backgroundColor: "#7c3aed",
+                                marginTop: "8px",
                               }}
                             />
-                            <span className="text-light opacity-75">
+                            <span
+                              className="text-light opacity-75"
+                              style={{ fontSize: "clamp(0.9rem, 2vw, 1rem)" }}
+                            >
                               {feature}
                             </span>
                           </li>
@@ -271,18 +320,18 @@ const ProjectSection = () => {
 
                       <hr className="border-secondary opacity-25" />
 
-                      <div className="d-flex gap-4 small text-secondary">
+                      <div className="d-flex gap-2 flex-wrap small text-secondary">
                         <span className="d-flex align-items-center border border-secondary rounded-pill px-2 py-1 gap-2">
                           <Shield size={16} />
-                          Auth
+                          <span className="d-none d-sm-inline">Auth</span>
                         </span>
                         <span className="d-flex align-items-center border border-secondary rounded-pill px-2 py-1 gap-2">
                           <Database size={16} />
-                          Database
+                          <span className="d-none d-sm-inline">Database</span>
                         </span>
                         <span className="d-flex align-items-center border border-secondary rounded-pill px-2 py-1 gap-2">
                           <Layers size={16} />
-                          REST API
+                          <span className="d-none d-sm-inline">REST API</span>
                         </span>
                       </div>
                     </div>

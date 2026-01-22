@@ -31,9 +31,12 @@ const AboutSection = () => {
     <section
       id="about"
       className="py-5"
-      style={{ paddingTop: "8rem", paddingBottom: "8rem" }}
+      style={{
+        paddingTop: "clamp(4rem, 8vw, 8rem)",
+        paddingBottom: "clamp(4rem, 8vw, 8rem)",
+      }}
     >
-      <div className="container mt-4">
+      <div className="container-fluid px-3 px-md-4">
         <motion.div
           ref={ref}
           initial={{ opacity: 0, y: 40 }}
@@ -42,12 +45,19 @@ const AboutSection = () => {
           className="text-center mb-5 mx-auto"
           style={{ maxWidth: "700px" }}
         >
-          <h1 className="display-2 fw-bold mb-4" style={{ fontSize: "4rem" }}>
-            Engineering Mindset. Real-World Execution.
+          <h1
+            className="fw-bold mb-4"
+            style={{ fontSize: "clamp(1.75rem, 6vw, 4rem)" }}
+          >
+            Engineering Mindset.<br></br>
+            Real-World Execution.
           </h1>
           <p
             className="lh-lg"
-            style={{ fontSize: "1.25rem", color: "rgba(255, 255, 255, 0.5)" }}
+            style={{
+              fontSize: "clamp(1rem, 2.5vw, 1.25rem)",
+              color: "rgba(255, 255, 255, 0.5)",
+            }}
           >
             I’m Zeeshan Mirza, a full-stack developer who builds systems with
             long-term scalability in mind. While others build pages, I build
@@ -57,9 +67,9 @@ const AboutSection = () => {
           </p>
         </motion.div>
 
-        <div className="row g-4">
+        <div className="row g-3 g-md-4">
           {highlights.map((item, index) => (
-            <div key={item.title} className="col-md-4">
+            <div key={item.title} className="col-12 col-md-6 col-lg-4">
               <motion.div
                 initial={{ opacity: 0, y: 40 }}
                 animate={isInView ? { opacity: 1, y: 0 } : {}}
@@ -95,14 +105,17 @@ const AboutSection = () => {
                   <item.icon size={32} style={{ color: "#7c3aed" }} />
                 </div>
                 <h3
-                  className="h5 fw-semibold mb-3"
-                  style={{ fontSize: "1.5rem" }}
+                  className="fw-semibold mb-3"
+                  style={{ fontSize: "clamp(1.1rem, 2vw, 1.5rem)" }}
                 >
                   {item.title}
                 </h3>
                 <p
                   className="text-secondary mb-0"
-                  style={{ lineHeight: "1.5" }}
+                  style={{
+                    lineHeight: "1.5",
+                    fontSize: "clamp(0.95rem, 2vw, 1rem)",
+                  }}
                 >
                   {item.description}
                 </p>
