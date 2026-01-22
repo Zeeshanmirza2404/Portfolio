@@ -10,14 +10,14 @@ All relevant details are presented directly on the website.
 
 ## 🌐 Live Portfolio
 
-👉 https://your-portfolio-link.com
+👉 https://portfolio-git-main-zeeshan-mirzas-projects.vercel.app/
 
 ---
 
 ## 📬 Contact
 
-- GitHub: https://github.com/your-username  
-- LinkedIn: https://linkedin.com/in/your-profile  
+- GitHub: https://github.com/Zeeshanmirza2404  
+- LinkedIn: https://www.linkedin.com/in/zeeshanmirza24/  
 
 ---
 
