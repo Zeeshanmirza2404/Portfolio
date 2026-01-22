@@ -360,12 +360,14 @@ p {
   transition: transform var(--transition-base);
 }
 
-.navbar-dark .nav-link:hover {
-  color: var(--color-accent-light) !important;
-}
+@media (hover: hover) {
+  .navbar-dark .nav-link:hover {
+    color: var(--color-accent-light) !important;
+  }
 
-.navbar-dark .nav-link:hover::after {
-  transform: translateX(-50%) scaleX(1);
+  .navbar-dark .nav-link:hover::after {
+    transform: translateX(-50%) scaleX(1);
+  }
 }
 
 /* ============================================

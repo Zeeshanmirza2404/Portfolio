@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
+import { Download } from "lucide-react";
 
 const navItems = [
   { label: "About", href: "#about" },
@@ -37,7 +38,9 @@ const Navigation = () => {
       animate={{ y: 0 }}
       transition={{ duration: 0.5, ease: "easeOut" }}
       className={`fixed-top transition-all w-100 ${
-        isScrolled ? "bg-dark bg-opacity-75 backdrop-blur border-bottom" : ""
+        isScrolled || isNavOpen
+          ? "bg-dark bg-opacity-75 backdrop-blur border-bottom"
+          : ""
       }`}
       style={{
         zIndex: 1050,
@@ -97,7 +100,7 @@ const Navigation = () => {
               transition: "all 0.3s ease",
             }}
           >
-            <ul className="navbar-nav ms-auto align-items-center gap-3 gap-lg-4 mt-lg-0 mt-4">
+            <ul className="navbar-nav ms-auto align-items-center gap-3 gap-lg-4 mt-lg-0 mt-4 pb-4 pb-lg-0">
               {navItems.map((item, index) => (
                 <motion.li
                   key={item.href}
@@ -137,13 +140,14 @@ const Navigation = () => {
                 <a
                   href="/Zeeshan_Resume2026.pdf"
                   download="Resume.pdf"
-                  className="btn w-100 w-lg-auto"
+                  className="btn w-100 w-lg-auto d-flex align-items-center gap-2"
                   style={{
                     background: "linear-gradient(135deg, #7c3aed, #a855f7)",
                     minHeight: "44px",
                   }}
                   onClick={() => setIsNavOpen(false)}
                 >
+                  <Download size={18} />
                   Resume
                 </a>
               </motion.li>

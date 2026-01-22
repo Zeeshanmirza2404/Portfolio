@@ -26,7 +26,7 @@ const projects = [
       "Volunteer scheduling",
     ],
     icon: Users,
-    liveDemo: "https://volunteer-coordination-platform.vercel.app/",
+    liveDemo: "#",
     sourceCode:
       "https://github.com/Zeeshanmirza2404/Volunteer-Coordination-Platform",
   },
@@ -45,7 +45,7 @@ const projects = [
       "Rating & review system",
     ],
     icon: Car,
-    liveDemo: "https://campusride.vercel.app/",
+    liveDemo: "#",
     sourceCode: "https://github.com/Zeeshanmirza2404/CampusRide",
   },
 ];
