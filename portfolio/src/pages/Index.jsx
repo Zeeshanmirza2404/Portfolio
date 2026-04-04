@@ -15,7 +15,7 @@ const Index = () => {
 
   return (
     <div
-      className="min-vh-100 bg-dark text-light"
+      className="min-vh-100 text-light bg-transparent"
       style={{ width: "100%", maxWidth: "100%", overflowX: "hidden" }}
     >
       <Navigation />

@@ -21,7 +21,7 @@ const NotFound = () => {
                 className="btn d-inline-flex align-items-center gap-2 px-4 py-2 text-white rounded-pill"
                 style={{ 
                   fontSize: "1.25rem",
-                  background: "linear-gradient(135deg, #7c3aed 0%, #713ca2 100%)"
+                  background: "linear-gradient(135deg, #9101ffff 0%, #5d00ffff 100%)"
                  }}
               >
                 Return home

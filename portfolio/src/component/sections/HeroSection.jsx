@@ -32,7 +32,7 @@ const HeroSection = () => {
             width: "clamp(300px, 60vw, 600px)",
             height: "clamp(300px, 60vw, 600px)",
             background:
-              "radial-gradient(circle, rgba(85, 22, 134, 1) 0%, rgba(33, 16, 79, 1) 40%, transparent 70%)",
+              "radial-gradient(circle, rgba(55, 0, 149, 1) 0%, rgba(17, 2, 61, 1) 20%, transparent 70%)",
             filter: "blur(60px)",
           }}
         />
@@ -128,7 +128,7 @@ const HeroSection = () => {
               <span
                 style={{
                   background:
-                    "linear-gradient(135deg, #a855f7 0%, #7c3aed 100%)",
+                    "linear-gradient(135deg, #9101ffff 0%, #5d00ffff 100%)",
                   WebkitBackgroundClip: "text",
                   WebkitTextFillColor: "transparent",
                   filter: "drop-shadow(0 0 20px rgba(124, 58, 237, 0.3))",
@@ -175,7 +175,7 @@ const HeroSection = () => {
                 style={{
                   fontSize: "clamp(0.9rem, 2vw, 1.125rem)",
                   background:
-                    "linear-gradient(135deg, #7c3aed 0%, #a855f7 100%)",
+                    "linear-gradient(135deg, #6812aaff 0%, #6447d9ff 100%)",
                   minHeight: "44px",
                   padding: "12px 20px",
                 }}
@@ -189,8 +189,8 @@ const HeroSection = () => {
                 className="btn d-inline-flex align-items-center justify-content-center gap-2"
                 style={{
                   fontSize: "clamp(0.9rem, 2vw, 1.125rem)",
-                  color: "#7c3aed",
-                  borderColor: "#7c3aed",
+                  color: "#6812aaff",
+                  borderColor: "#6812aaff",
                   border: "2px solid",
                   minHeight: "44px",
                   padding: "12px 20px",

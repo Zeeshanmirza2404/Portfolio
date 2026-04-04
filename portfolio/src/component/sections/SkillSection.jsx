@@ -97,7 +97,7 @@ const SkillSection = () => {
                 initial={{ opacity: 0, y: 40 }}
                 animate={isInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
-                className="card bg-dark bg-opacity-50 border-secondary h-100 p-4"
+                className="card bg-dark bg-opacity-10 border-secondary h-100 p-4"
                 style={{
                   backdropFilter: "blur(10px)",
                   transition: "all 0.3s ease",
@@ -128,7 +128,7 @@ const SkillSection = () => {
                         "linear-gradient(135deg, rgba(124, 58, 237, 0.15), rgba(124, 58, 237, 0.05))",
                     }}
                   >
-                    <category.icon size={26} style={{ color: "#7c3aed" }} />
+                    <category.icon size={26} style={{ color: "#9101ffff" }} />
                   </div>
                   <h3
                     className="fw-semibold mb-0"
@@ -169,7 +169,7 @@ const SkillSection = () => {
                         style={{
                           width: "4px",
                           height: "4px",
-                          backgroundColor: "#7c3aed",
+                          backgroundColor: "#9101ffff",
                           minWidth: "4px",
                         }}
                       />

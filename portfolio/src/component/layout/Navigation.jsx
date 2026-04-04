@@ -39,11 +39,12 @@ const Navigation = () => {
       transition={{ duration: 0.5, ease: "easeOut" }}
       className={`fixed-top transition-all w-100 ${
         isScrolled || isNavOpen
-          ? "bg-dark bg-opacity-75 backdrop-blur border-bottom"
+          ? "backdrop-blur border-bottom"
           : ""
       }`}
       style={{
         zIndex: 1050,
+        backgroundColor: (isScrolled || isNavOpen) ? "rgba(3, 0, 20, 0.75)" : "transparent",
         borderBottomColor: isScrolled
           ? "rgba(124, 58, 237, 0.2)"
           : "transparent",
@@ -59,7 +60,7 @@ const Navigation = () => {
           >
             <span
               style={{
-                color: "#a855f7",
+                color: "#9101ffff",
                 textShadow: "0 0 10px rgba(124, 58, 237, 0.5)",
                 fontSize: "1.25rem",
               }}
@@ -70,7 +71,7 @@ const Navigation = () => {
               href="#"
               className="navbar-brand fw-bold fs-4 fs-lg-3 m-0"
               style={{
-                background: "linear-gradient(135deg, #7c3aed, #a855f7)",
+                background: "linear-gradient(135deg, #9101ffff, #5d00ffff)",
                 WebkitBackgroundClip: "text",
                 WebkitTextFillColor: "transparent",
                 transition: "all 0.3s ease",
@@ -142,7 +143,7 @@ const Navigation = () => {
                   download="Resume.pdf"
                   className="btn w-100 w-lg-auto d-flex align-items-center gap-2"
                   style={{
-                    background: "linear-gradient(135deg, #7c3aed, #a855f7)",
+                    background: "linear-gradient(135deg, #9101ffff, #5d00ffff)",
                     minHeight: "44px",
                   }}
                   onClick={() => setIsNavOpen(false)}

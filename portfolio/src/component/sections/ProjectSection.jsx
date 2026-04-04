@@ -26,7 +26,7 @@ const projects = [
       "Volunteer scheduling",
     ],
     icon: Users,
-    liveDemo: "#",
+    liveDemo: "https://volunteer-connect-one.vercel.app/",
     sourceCode:
       "https://github.com/Zeeshanmirza2404/Volunteer-Coordination-Platform",
   },
@@ -45,7 +45,7 @@ const projects = [
       "Rating & review system",
     ],
     icon: Car,
-    liveDemo: "#",
+    liveDemo: "https://campus-ride.vercel.app/",
     sourceCode: "https://github.com/Zeeshanmirza2404/CampusRide",
   },
 ];
@@ -117,7 +117,7 @@ const ProjectSection = () => {
               initial={{ opacity: 0, y: 60 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.7, delay: index * 0.2 }}
-              className="card bg-dark bg-opacity-50 border-secondary overflow-hidden"
+              className="card bg-dark bg-opacity-10 border-secondary overflow-hidden"
               style={{
                 backdropFilter: "blur(10px)",
                 transition: "all 0.3s ease",
@@ -150,7 +150,7 @@ const ProjectSection = () => {
                           minHeight: "48px",
                         }}
                       >
-                        <project.icon size={32} style={{ color: "#7c3aed" }} />
+                        <project.icon size={32} style={{ color: "#9101ffff" }} />
                       </div>
                       <div className="min-w-0">
                         <h3 className="h4 h-md-3 fw-bold mb-1">
@@ -239,13 +239,13 @@ const ProjectSection = () => {
                         style={{
                           transition: "all 0.3s ease",
                           fontSize: "clamp(0.9rem, 2vw, 1rem)",
-                          background: "linear-gradient(135deg, #7c3aed 0%, #a855f7 100%)",
+                          background: "linear-gradient(135deg, #9101ffff 0%, #5d00ffff 100%)",
                           minHeight: "44px",
                           border: "none",
                         }}
                         onMouseEnter={(e) => {
                           e.currentTarget.style.transform = "translateY(-2px)";
-                          e.currentTarget.style.boxShadow = "0 10px 20px rgba(124, 58, 237, 0.4)";
+                          e.currentTarget.style.boxShadow = "0 10px 20px rgba(98, 8, 255, 0.33)";
                         }}
                         onMouseLeave={(e) => {
                           e.currentTarget.style.transform = "translateY(0)";
@@ -304,7 +304,7 @@ const ProjectSection = () => {
                               style={{
                                 width: "6px",
                                 height: "6px",
-                                backgroundColor: "#7c3aed",
+                                backgroundColor: "#9101ffff",
                                 marginTop: "8px",
                               }}
                             />

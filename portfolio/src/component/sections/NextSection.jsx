@@ -43,10 +43,10 @@ const NextSection = () => {
           style={{ maxWidth: "900px" }}
         >
           <div
-            className="card bg-dark bg-opacity-50 border-secondary p-3 p-md-4 p-lg-5"
+            className="card bg-dark bg-opacity-10 border-secondary p-3 p-md-4 p-lg-5"
             style={{
               backdropFilter: "blur(20px)",
-              boxShadow: "0 0 60px rgba(124, 58, 237, 0.2)",
+              boxShadow: "0 0 60px rgba(145, 1, 255, 0.1)",
               borderRadius: "16px",
               border: "1px solid rgba(124, 58, 237, 0.2)",
             }}
@@ -67,7 +67,7 @@ const NextSection = () => {
                     "linear-gradient(135deg, rgba(124, 58, 237, 0.2), rgba(124, 58, 237, 0.05))",
                 }}
               >
-                <Brain size={40} style={{ color: "#7c3aed" }} />
+                <Brain size={40} style={{ color: "#9101ffff" }} />
               </motion.div>
 
               {/* Content */}
@@ -79,7 +79,7 @@ const NextSection = () => {
                   className="d-inline-flex align-items-center gap-2 px-3 py-1 rounded-pill small fw-medium mb-3"
                   style={{
                     background: "rgba(124, 58, 237, 0.1)",
-                    color: "#7c3aed",
+                    color: "#9101ffff",
                   }}
                 >
                   <Sparkles size={14} />
@@ -116,7 +116,7 @@ const NextSection = () => {
                           transition: "all 0.2s ease",
                         }}
                       >
-                        <item.icon size={20} style={{ color: "#7c3aed" }} />
+                        <item.icon size={20} style={{ color: "#9101ffff" }} />
                         <span className="medium fw-medium">{item.label}</span>
                       </motion.div>
                     </div>

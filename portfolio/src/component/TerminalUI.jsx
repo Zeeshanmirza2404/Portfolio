@@ -24,7 +24,7 @@ const TerminalUI = () => {
       className="card bg-dark border overflow-hidden position-relative"
       style={{
         backdropFilter: "blur(20px)",
-        background: "rgba(20, 20, 30, 0.8)",
+        background: "rgba(3, 3, 10, 0.85)",
         boxShadow: `
           0 0 80px rgba(124, 58, 237, 0.5),
           0 20px 60px rgba(0, 0, 0, 0.6),
@@ -51,7 +51,7 @@ const TerminalUI = () => {
       <div
         className="d-flex align-items-center gap-2 px-3 py-2 border-bottom flex-wrap"
         style={{
-          background: "rgba(255,255,255,0.03)",
+          background: "rgba(0,0,0,0.4)",
           borderBottomColor: "rgba(124, 58, 237, 0.2) !important",
           minHeight: "44px",
         }}
@@ -104,7 +104,7 @@ const TerminalUI = () => {
           fontFamily: "var(--bs-font-monospace)",
           fontSize: "clamp(12px, 1.5vw, 14px)",
           minHeight: "200px",
-          background: "rgba(0,0,0,0.4)",
+          background: "rgba(0,0,0,0.65)",
           overflowX: "auto",
         }}
       >
@@ -123,7 +123,7 @@ const TerminalUI = () => {
           >
             <span
               style={{
-                color: "#a855f7",
+                color: "#9101ffff",
                 textShadow: "0 0 10px rgba(124, 58, 237, 0.5)",
                 flexShrink: 0,
               }}
@@ -159,7 +159,7 @@ const TerminalUI = () => {
           >
             <span
               style={{
-                color: "#a855f7",
+                color: "#9101ffff",
                 textShadow: "0 0 10px rgba(124, 58, 237, 0.5)",
                 flexShrink: 0,
               }}
@@ -168,8 +168,8 @@ const TerminalUI = () => {
             </span>
             <span
               style={{
-                color: "#a855f7",
-                background: "linear-gradient(135deg, #a855f7 0%, #7c3aed 100%)",
+                color: "#9101ffff",
+                background: "linear-gradient(135deg, #9101ffff 0%, #5d00ffff 100%)",
                 width: "8px",
                 height: "20px",
                 animation: "blink 1s step-end infinite",

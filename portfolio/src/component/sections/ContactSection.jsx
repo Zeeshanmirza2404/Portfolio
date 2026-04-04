@@ -74,7 +74,7 @@ const ContactSection = () => {
                   initial={{ opacity: 0, y: 20 }}
                   animate={isInView ? { opacity: 1, y: 0 } : {}}
                   transition={{ duration: 0.5, delay: index * 0.1 }}
-                  className="card bg-dark bg-opacity-50 border-secondary h-100 p-4 p-md-5 text-decoration-none text-light d-flex flex-column align-items-center text-center"
+                  className="card bg-dark bg-opacity-10 border-secondary h-100 p-4 p-md-5 text-decoration-none text-light d-flex flex-column align-items-center text-center"
                   style={{
                     backdropFilter: "blur(10px)",
                     transition: "all 0.3s ease",
@@ -83,7 +83,7 @@ const ContactSection = () => {
                   onMouseEnter={(e) => {
                     e.currentTarget.style.transform = "translateY(-8px)";
                     e.currentTarget.style.boxShadow =
-                      "0 20px 40px rgba(124, 58, 237, 0.25)";
+                      "0 20px 40px rgba(124, 58, 237, 0.11)";
                     e.currentTarget.style.borderColor =
                       "rgba(124, 58, 237, 0.4)";
                     const arrow = e.currentTarget.querySelector(".arrow-icon");
@@ -113,7 +113,7 @@ const ContactSection = () => {
                         "linear-gradient(135deg, rgba(124, 58, 237, 0.15), rgba(124, 58, 237, 0.05))",
                     }}
                   >
-                    <link.icon size={28} style={{ color: "#7c3aed" }} />
+                    <link.icon size={28} style={{ color: "#9101ffff" }} />
                   </div>
                   <div
                     className="fw-medium mb-2 d-flex align-items-center gap-2"
@@ -153,7 +153,7 @@ const ContactSection = () => {
               className="btn btn-lg d-inline-flex align-items-center gap-2 px-5 py-3"
               style={{
                 fontSize: "1.25rem",
-                background: "linear-gradient(135deg, #7c3aed 0%, #a855f7 100%)",
+                background: "linear-gradient(135deg, #9101ffff 0%, #5d00ffff 100%)",
               }}
             >
               <Download size={22} />

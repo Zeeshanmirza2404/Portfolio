@@ -92,7 +92,8 @@ html {
 
 body {
   font-family: var(--bs-font-sans-serif);
-  background-color: var(--color-bg-secondary);
+  background: linear-gradient(135deg, #02000A 0%, #080C1F 50%, #020512 100%);
+  background-attachment: fixed;
   color: var(--color-text-secondary);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -101,6 +102,14 @@ body {
   overflow-x: hidden;
   width: 100%;
   max-width: 100%;
+  min-height: 100vh;
+}
+
+/* ============================================
+   DEEP SPACE REMIX SECTION BACKGROUNDS
+   ============================================ */
+section, footer, .navbar {
+  background: transparent !important;
 }
 
 /* ============================================
@@ -454,23 +463,15 @@ p {
    SCROLLBAR STYLES
    ============================================ */
 
+/* Hide scrollbar for Chrome, Safari and Opera */
 ::-webkit-scrollbar {
-  width: 10px;
-  height: 10px;
+  display: none;
 }
 
-::-webkit-scrollbar-track {
-  background: var(--color-bg-primary);
-}
-
-::-webkit-scrollbar-thumb {
-  background: rgba(124, 58, 237, 0.3);
-  border-radius: 5px;
-  border: 2px solid var(--color-bg-primary);
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: rgba(124, 58, 237, 0.5);
+/* Hide scrollbar for IE, Edge and Firefox */
+html, body {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
 }
 
 /* ============================================
